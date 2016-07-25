@@ -6,37 +6,34 @@
 
 def alias_generator
 	puts "Initializing alias generator..."
-	puts "What is your full name?"
+  puts "What is your full name?"
 
-  full_name = gets.downcase.split(' ').reverse!
+  name = gets.downcase.split(' ').reverse!.join(' ').chars.to_a
+  name
+  # => name = ['o', 'h', ' ', 'a', 'n', 'n', 'i', 'e']
 
-  # => full_name = last name, first name
-
-  last_name = full_name[0].chars
-  first_name = full_name[1].chars
-
-  # => last_name = ['x', 'x', 'x', 'x']
-
-  # loop thru arrays of names
+  # loop thru arrays of letters in name
   # if letter in name array is also included in vowels array
   # +1 to next letter of vowels array
-  # otherwise, change all other letter to next letter in alphabet
 
-  vowels = ["a", "e", "i", "o", "u"]
+  def swap_vowels(name)
+    vowels = ["a", "e", "i", "o", "u"]
 
-  last_name.each do |letter|
-    if vowels.include?(letter)
-      letter.replace(vowels.index[letter + 1])
-    else
-      letter.replace(letter.next)
+    #name.select { |letter| letter.include?(vowels) }.each { |letter| letter = vowels[letter + 1] }
+    i = 0
+    while i < name.length
+      if name.include?(vowels)
+        p vowels[i]
+      #else
+        #name.map! { |letter| letter.next }
+      end
+      i += 1
     end
+    name
   end
 
-  last_name
-  # => last_name = ['u','i']
+  swap_vowels(name)
 
-  #first_name
-  # => first_name = ['e', 'o', 'o', 'o', 'i']
 end
 
 p alias_generator
