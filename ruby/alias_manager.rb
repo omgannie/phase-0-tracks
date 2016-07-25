@@ -17,18 +17,26 @@ def alias_generator
 
   # => last_name = ['x', 'x', 'x', 'x']
 
+  # loop thru arrays of names
+  # if letter in name array is also included in vowels array
+  # +1 to next letter of vowels array
+  # otherwise, change all other letter to next letter in alphabet
+
   vowels = ["a", "e", "i", "o", "u"]
 
   last_name.each do |letter|
-  	if letter == vowels[letter]
-  		letter.replace(vowels[letter + 1])
-  	else
-  		letter.next
-  	end
+    if vowels.include?(letter)
+      letter.replace(vowels.index[letter + 1])
+    else
+      letter.replace(letter.next)
+    end
   end
 
   last_name
-  # =>
+  # => last_name = ['u','i']
+
+  #first_name
+  # => first_name = ['e', 'o', 'o', 'o', 'i']
 end
 
 p alias_generator
