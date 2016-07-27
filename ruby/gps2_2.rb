@@ -18,7 +18,7 @@ def create_list(list, string_of_items)
   return list
 end
 
-p create_list(list, "carrots apples cereal pizza")
+p create_list(list, "lemonade tomatoes onions icecream")
 
 # Method to add an item to a list
 # input: item name and optional quantity
@@ -32,7 +32,7 @@ def add_item(list, item, quantity)
   return list
 end
 
-p add_item(list, "milk", 3)
+#p add_item(list, "milk", 3)
 
 # Method to remove an item from the list
 # input: hash, item
@@ -47,8 +47,6 @@ def remove_item(list, item)
   list
 end
 
-p remove_item(list, "carrots")
-
 # Method to update the quantity of an item
 # input: hash, item and quantity
 # steps:
@@ -62,7 +60,13 @@ def update_item(list, item, quantity)
   list
 end
 
-p update_item(list, "milk", 5)
+p update_item(list, "lemonade", 2)
+p update_item(list, "tomatoes", 3)
+p update_item(list, "icecream", 4)
+
+p remove_item(list, "lemonade")
+
+p update_item(list, "icecream", 1)
 
 # Method to print a list and make it look pretty
 # input: hash
