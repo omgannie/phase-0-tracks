@@ -55,9 +55,7 @@ end
   # 3. set new value for item
 # output: return updated list
 def update_item(list, item, quantity)
-  list[item] = quantity
-
-  list
+  add_item(list, item, quantity)
 end
 
 p update_item(list, "lemonade", 2)
