@@ -33,3 +33,15 @@ duchess == fido
 fido.instance_of?(Array)
 fido.instance_of?(Puppy)
 #spot.play_dead
+
+# Release 2
+str = String.new
+str.length
+str.empty?
+str += "huh."
+
+str = "some string"
+
+greeting = String.new("Hello")
+greeting.length
+greeting.upcase
