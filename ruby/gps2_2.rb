@@ -19,12 +19,20 @@ def create_list(list, string_of_items)
 end
 
 p create_list(list, "carrots apples cereal pizza")
+
 # Method to add an item to a list
 # input: item name and optional quantity
 # steps:
   # 1. use hash, item, and quantity as parameters
   # 2. add item to hash, set quantity as value
 # output: return updated list
+def add_item(list, item, quantity)
+  list[item] = quantity
+
+  return list
+end
+
+p add_item(list, "milk", 3)
 
 # Method to remove an item from the list
 # input: hash, item
@@ -33,6 +41,13 @@ p create_list(list, "carrots apples cereal pizza")
   # 2. locate item in the hash as key
   # 3. delete located item (as key)
 # output: return updated list
+def remove_item(list, item)
+  list.delete(item)
+
+  list
+end
+
+p remove_item(list, "carrots")
 
 # Method to update the quantity of an item
 # input: hash, item and quantity
@@ -41,6 +56,13 @@ p create_list(list, "carrots apples cereal pizza")
   # 2. locate item in hash as key
   # 3. set new value for item
 # output: return updated list
+def update_item(list, item, quantity)
+  list[item] = quantity
+
+  list
+end
+
+p update_item(list, "milk", 5)
 
 # Method to print a list and make it look pretty
 # input: hash
@@ -49,3 +71,13 @@ p create_list(list, "carrots apples cereal pizza")
   # 2. use item and value as parameters for iteration thru hash
   # 3. for each item, print "you want #number of #item!"
 # output: print list in readable format
+def print_list(list)
+  puts "Here is your grocery list:"
+
+  list.each do |item, quantity|
+    puts "You want #{quantity} of #{item}!"
+  end
+
+end
+
+print_list(list)
