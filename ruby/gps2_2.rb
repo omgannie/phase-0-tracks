@@ -83,3 +83,16 @@ def print_list(list)
 end
 
 print_list(list)
+
+# Release 5: Reflect
+# I realized that pseudocoding is especially important before producing initial solutions, and especially while working as a team.
+# It is important for your teammate to know what you are thinking and pseudocoding helps clarify that.
+
+# The trade off for using a hash in this challenge instead of an array is that it is easier to initialize and simplify and update as the program
+# continues to return the results you want.
+# A method returns the out, which is the updated version of the input, according to how the method is to manipulate the data.
+# You can pass parameters as arguments into methods. Datatypes, booleans, strings, integers.
+# You can pass information between methods by return the final output of each method.
+# Well, for this challenge, I was convinced that using a global variable would work in order to manipulate all of the data that the challenge asked.
+# However, using a global variable would've meant risking any part of the program to modify the data in the global variable in a way we wouldn't expect,
+# making it harder to debug later on.
