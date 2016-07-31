@@ -55,3 +55,18 @@ first_santa.gender = "intersex"
 p first_santa.age
 p first_santa.ethnicity
 p first_santa.gender
+
+# Building Many santas
+santa_count = 0
+santas = []
+
+until santa_count >= 20
+  gender = genders.sample
+  ethnicity = ethnicities.sample
+  santa = Santa.new(gender, ethnicity)
+  age = rand(1..140)
+
+  p "This Santa is #{gender}, #{ethnicity}, age #{age}"
+
+  santa_count += 1
+end
