@@ -1,4 +1,7 @@
 class Santa
+  attr_reader :ethnicity, :age
+  attr_accessor :gender
+
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
@@ -32,19 +35,6 @@ class Santa
     p @reindeer_ranking
   end
 
-# setter method
-  def gender=(new_gender)
-    @gender = new_gender
-  end
-
-# getter methods
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
 end
 
 # Driver Code
@@ -62,5 +52,6 @@ end
 first_santa.celebrate_birthday
 first_santa.get_mad_at("Donner")
 first_santa.gender = "intersex"
-first_santa.age
-first_santa.ethnicity
+p first_santa.age
+p first_santa.ethnicity
+p first_santa.gender
