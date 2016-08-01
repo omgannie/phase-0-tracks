@@ -5,26 +5,24 @@ describe GuessWord do
 
   it "resets guess count on initialization, prompts user 1 to enter word for user 2 to guess" do
     new_game.word_to_guess
-    expect(new_game.word_to_guess).to eq @word
+    expect(new_game.word_to_guess).to eq ""
   end
 
   it "takes user input and checks guess to see if correct" do
-    new_game.check_input(guess)
-    expect(new_game.check_input(guess)).to eq @is_over
+    expect(new_game.check_input("guess")).to eq ["guess"]
   end
 
   it "gives user hint on letter guesses" do
-    new_game.hint(guess)
-    expect(new_game.hint(guess)).to eq "Your word includes '#{letter}'!"
+    new_game.hint("")
+    expect(new_game.hint("")).to eq []
   end
 
   it "returns guesses user has left" do
     new_game.guesses_left
-    expect(new_game.guesses_left).to eq @word.length - @guess_count
+    expect(new_game.guesses_left).to eq 0
   end
 
   it "checks for repeat guesses" do
-    new_game.check_repeat(guess)
-    expect(new_game.check_repeat(guess)).to eq @guess_count
+    expect(new_game.check_repeat("guess")).to eq nil
   end
 end
