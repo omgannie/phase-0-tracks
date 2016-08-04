@@ -4,7 +4,7 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# require_relative imports data from another file within the same directory
 #
 require_relative 'state_data'
 
