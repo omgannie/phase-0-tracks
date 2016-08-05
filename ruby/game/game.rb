@@ -1,6 +1,6 @@
 # word-guessing game
 class GuessWord
-  attr_reader :guess_count, :is_over, :words
+  attr_reader :guess_count, :is_over
   attr_accessor :already_guessed
 
   def initialize
