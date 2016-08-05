@@ -28,15 +28,22 @@ class GuessWord
     array1 = guess.split(//)
     array2 = word.split(//)
 
-    array1.each do |letter|
-      if array2.include?(letter)
-        unless array2.count(letter) > 1
-          p "Your word includes '#{letter}'!"
-        end
-      elsif array1 & array2 == array2
-        @is_over = true
-        break
-      end
+  #  array1.each do |letter|
+  #    if array2.include?(letter)
+  #      unless array2.count(letter) > 1
+  #        p "Your word includes '#{letter}'!"
+  #      end
+  #    elsif array1 & array2 == array2
+  #      @is_over = true
+  #      break
+  #    end
+  #  end
+
+    letter_hint = array1 & array2
+    if letter_hint.any?
+      p "Your word includes '#{letter_hint}'!"
+    elsif array1 & array2 == array2
+      @is_over = true
     end
   end
 
@@ -46,10 +53,10 @@ class GuessWord
   end
 
 # method 4 - feedback for repeat guesses
-  def check_repeat(guess)
+  def check_repeat(guess, word)
     if @already_guessed.include?(guess) && @already_guessed.count(guess) > 1
-      @guess_count += 0
-      p "You have already guessed this word. You have #{@guess_count} guesses left."
+      @guess_count -= 1
+      p "You have already guessed this word. You have #{guesses_left(word)} guesses left."
     end
   end
 

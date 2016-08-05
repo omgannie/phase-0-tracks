@@ -23,7 +23,7 @@ while !new_game.is_over
   new_game.check_input(guess, @word)
   new_game.hint(guess, @word)
   new_game.guesses_left(@word)
-  new_game.check_repeat(guess)
+  new_game.check_repeat(guess, @word)
 
   if guess != @word && (new_game.guesses_left(@word) == 0)
     p "You ran out of guesses! HAHA LOSER!"
