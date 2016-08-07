@@ -3,7 +3,8 @@
 require_relative 'game'
 
 new_game = GuessWord.new
-word = new_game.word_to_guess
+puts "User 1, please enter word to guess for user 2."
+@word = gets.chomp
 
 # input: user 2 - guesses
 
@@ -15,16 +16,20 @@ while !new_game.is_over
   puts "Guess the word!"
   guess = gets.chomp
 
-  new_game.check_input(guess)
-  new_game.hint(guess)
-  new_game.guesses_left
-  new_game.check_repeat(guess)
 
-  if guess != word && (new_game.guesses_left == 0)
+  # handles input error
+  # retry if guess.include?('0123456789!@#$%^&*()_+{}[];:,./?<>\|')
+
+  new_game.check_input(guess, @word)
+  new_game.hint(guess, @word)
+  new_game.guesses_left(@word)
+  new_game.check_repeat(guess, @word)
+
+  if guess != @word && (new_game.guesses_left(@word) == 0)
     p "You ran out of guesses! HAHA LOSER!"
     is_over = true
     break
-  elsif guess == word && (new_game.guesses_left >= 0)
+  elsif guess == @word && (new_game.guesses_left(@word) >= 0)
     p "Congraulations on guessing the word!"
     is_over = true
   end

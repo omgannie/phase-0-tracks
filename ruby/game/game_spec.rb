@@ -3,26 +3,32 @@ require_relative 'game'
 describe GuessWord do
   let(:new_game) { GuessWord.new }
 
-  it "resets guess count on initialization, prompts user 1 to enter word for user 2 to guess" do
-    new_game.word_to_guess
-    expect(new_game.word_to_guess).to eq ""
+  it "resets guess count, is over & already guessed on initialization" do
+    expect(new_game.guess_count).to eq 0
+    expect(new_game.already_guessed).to eq []
+    expect(new_game.is_over).to eq false
   end
 
-  it "takes user input and checks guess to see if correct" do
-    expect(new_game.check_input("guess")).to eq ["guess"]
+  it "accepts both user inputs, checks to see if guess is correct" do
+    new_game.check_input("the guess", "the word")
+    expect(new_game.is_over).to eq false
   end
 
-  it "gives user hint on letter guesses" do
-    new_game.hint("")
-    expect(new_game.hint("")).to eq []
+  it "accepts both user inputs, gives hint if guess includes a letter from the word" do
+    new_game.hint("guess", "word")
+    expect(new_game.is_over).to eq false
   end
 
-  it "returns guesses user has left" do
-    new_game.guesses_left
-    expect(new_game.guesses_left).to eq 0
+  it "returns number of guesses left" do
+    new_game.check_input("guess", "word")
+    new_game.guesses_left("word")
+    expect(new_game.guesses_left("word")).to eq 3
   end
 
-  it "checks for repeat guesses" do
-    expect(new_game.check_repeat("guess")).to eq nil
+  it "checks for repeated guesses and gives feedback" do
+    new_game.check_input("guess", "word")
+    new_game.check_input("hello", "word")
+    new_game.check_repeat("hello")
+    expect(new_game.guess_count).to eq 2
   end
 end
