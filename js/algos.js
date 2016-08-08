@@ -24,9 +24,29 @@ function LongestPhrase(array) {
 
   };
 
+// function that takes two objects
+// checks to see if objects share at least one key-value pair
+// so {name: "Steven", age: 54} and {name: "Tamir", age: 54}
+// returns true
+// if no pairs match, function to return false
+
+function compareKeyValue(first_object, second_object) {
+  if (first_object.keys() && second_object.keys() === first_object.keys() && second_object.keys()) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
+
 // driver code
 LongestPhrase(myArray);
 // => second long phrase is the longest phrase in this array
 
 myArray.push("supercalifragilalisticks");
 LongestPhrase(myArray);
+// => supercalifragilalisticks is the longest phrase in this array
+
+compareKeyValue({name: "Steven", age: 54}, {name: "Tamir", age: 54})
+// => true
+compareKeyValue({name: "Alice", age: 20}, {name: "Andrew", age: 70})
+// => false
