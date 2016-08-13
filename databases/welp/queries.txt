@@ -1,0 +1,45 @@
+sqlite> SELECT * FROM businesses, users, reviews WHERE reviews.business_id = businesses.id;
+3|The Beagle Nightclub|1|Bradford|Pitt|1|4.6|It was delicious|3|1
+3|The Beagle Nightclub|2|Mandy|Kaling|1|4.6|It was delicious|3|1
+3|The Beagle Nightclub|3|Angela|Jolie|1|4.6|It was delicious|3|1
+3|The Beagle Nightclub|4|Steven|Wonder|1|4.6|It was delicious|3|1
+3|The Beagle Nightclub|5|Holly|Berry|1|4.6|It was delicious|3|1
+3|The Beagle Nightclub|6|Merryl|Streepman|1|4.6|It was delicious|3|1
+3|The Beagle Nightclub|7|Denzel|George|1|4.6|It was delicious|3|1
+5|Plumbing by Janet|1|Bradford|Pitt|2|2.1|It was horrendous, would not recommend.|5|3
+5|Plumbing by Janet|2|Mandy|Kaling|2|2.1|It was horrendous, would not recommend.|5|3
+5|Plumbing by Janet|3|Angela|Jolie|2|2.1|It was horrendous, would not recommend.|5|3
+5|Plumbing by Janet|4|Steven|Wonder|2|2.1|It was horrendous, would not recommend.|5|3
+5|Plumbing by Janet|5|Holly|Berry|2|2.1|It was horrendous, would not recommend.|5|3
+5|Plumbing by Janet|6|Merryl|Streepman|2|2.1|It was horrendous, would not recommend.|5|3
+5|Plumbing by Janet|7|Denzel|George|2|2.1|It was horrendous, would not recommend.|5|3
+1|Grundy Hollow Wedding Chapel|1|Bradford|Pitt|3|5|Magnificent!|1|2
+1|Grundy Hollow Wedding Chapel|2|Mandy|Kaling|3|5|Magnificent!|1|2
+1|Grundy Hollow Wedding Chapel|3|Angela|Jolie|3|5|Magnificent!|1|2
+1|Grundy Hollow Wedding Chapel|4|Steven|Wonder|3|5|Magnificent!|1|2
+1|Grundy Hollow Wedding Chapel|5|Holly|Berry|3|5|Magnificent!|1|2
+1|Grundy Hollow Wedding Chapel|6|Merryl|Streepman|3|5|Magnificent!|1|2
+1|Grundy Hollow Wedding Chapel|7|Denzel|George|3|5|Magnificent!|1|2
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM businesses, users, reviews WHERE reviews.user_id = businesses.id;
+Bradford|Pitt|Grundy Hollow Wedding Chapel|4.6|It was delicious
+Mandy|Kaling|Grundy Hollow Wedding Chapel|4.6|It was delicious
+Angela|Jolie|Grundy Hollow Wedding Chapel|4.6|It was delicious
+Steven|Wonder|Grundy Hollow Wedding Chapel|4.6|It was delicious
+Holly|Berry|Grundy Hollow Wedding Chapel|4.6|It was delicious
+Merryl|Streepman|Grundy Hollow Wedding Chapel|4.6|It was delicious
+Denzel|George|Grundy Hollow Wedding Chapel|4.6|It was delicious
+Bradford|Pitt|The Beagle Nightclub|2.1|It was horrendous, would not recommend.
+Mandy|Kaling|The Beagle Nightclub|2.1|It was horrendous, would not recommend.
+Angela|Jolie|The Beagle Nightclub|2.1|It was horrendous, would not recommend.
+Steven|Wonder|The Beagle Nightclub|2.1|It was horrendous, would not recommend.
+Holly|Berry|The Beagle Nightclub|2.1|It was horrendous, would not recommend.
+Merryl|Streepman|The Beagle Nightclub|2.1|It was horrendous, would not recommend.
+Denzel|George|The Beagle Nightclub|2.1|It was horrendous, would not recommend.
+Bradford|Pitt|Amir's Towing|5|Magnificent!
+Mandy|Kaling|Amir's Towing|5|Magnificent!
+Angela|Jolie|Amir's Towing|5|Magnificent!
+Steven|Wonder|Amir's Towing|5|Magnificent!
+Holly|Berry|Amir's Towing|5|Magnificent!
+Merryl|Streepman|Amir's Towing|5|Magnificent!
+Denzel|George|Amir's Towing|5|Magnificent!
