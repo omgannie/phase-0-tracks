@@ -1,0 +1,92 @@
+sqlite> SELECT * FROM artists, movements WHERE artists.movement_id = movements.id;
+1|Marcel Duchamp|FALSE|8|8|Dada
+2|Alphonse Mucha|TRUE|4|4|Art Nouveau
+3|Edvard Munch|FALSE|5|5|Expressionism
+4|Henri Matisse|TRUE|3|3|Fauvism
+5|Mary Cassat|FALSE|1|1|Impressionism
+6|Marc Chagall|FALSE|5|5|Expressionism
+7|Claude Monet|TRUE|1|1|Impressionism
+8|Paul Cezanne|FALSE|2|2|Post-Impressionism
+9|Paul Gauguin|TRUE|2|2|Post-Impressionism
+10|Georges Seurat|TRUE|2|2|Post-Impressionism
+11|Vincent van Gogh|TRUE|2|2|Post-Impressionism
+12|Egon Schiele|FALSE|4|4|Art Nouveau
+13|Gustav Klimt|TRUE|4|4|Art Nouveau
+14|Henri de Toulouse Lautrec|TRUE|2|2|Post-Impressionism
+15|Giacomo Balla|TRUE|7|7|Futurism
+16|Pablo Picasso|FALSE|6|6|Cubism
+17|Wassily Kandinsky|FALSE|5|5|Expressionism
+18|Georges Braque|FALSE|6|6|Cubism
+19|Hugo Ball|FALSE|8|8|Dada
+20|Oskar Kokoschka|FALSE|5|5|Expressionism
+
+sqlite> UPDATE artists
+   ...> SET name = "Mary Cassatt"
+   ...> WHERE id = 5;
+sqlite> SELECT * FROM artists;
+1|Marcel Duchamp|FALSE|8
+2|Alphonse Mucha|TRUE|4
+3|Edvard Munch|FALSE|5
+4|Henri Matisse|TRUE|3
+5|Mary Cassatt|FALSE|1
+6|Marc Chagall|FALSE|5
+7|Claude Monet|TRUE|1
+8|Paul Cezanne|FALSE|2
+9|Paul Gauguin|TRUE|2
+10|Georges Seurat|TRUE|2
+11|Vincent van Gogh|TRUE|2
+12|Egon Schiele|FALSE|4
+13|Gustav Klimt|TRUE|4
+14|Henri de Toulouse Lautrec|TRUE|2
+15|Giacomo Balla|TRUE|7
+16|Pablo Picasso|FALSE|6
+17|Wassily Kandinsky|FALSE|5
+18|Georges Braque|FALSE|6
+19|Hugo Ball|FALSE|8
+20|Oskar Kokoschka|FALSE|5
+
+sqlite> SELECT artists.name, movements.name FROM artists JOIN movements ON artists.movement_id = movements.id;
+Marcel Duchamp|Dada
+Alphonse Mucha|Art Nouveau
+Edvard Munch|Expressionism
+Henri Matisse|Fauvism
+Mary Cassatt|Impressionism
+Marc Chagall|Expressionism
+Claude Monet|Impressionism
+Paul Cezanne|Post-Impressionism
+Paul Gauguin|Post-Impressionism
+Georges Seurat|Post-Impressionism
+Vincent van Gogh|Post-Impressionism
+Egon Schiele|Art Nouveau
+Gustav Klimt|Art Nouveau
+Henri de Toulouse Lautrec|Post-Impressionism
+Giacomo Balla|Futurism
+Pablo Picasso|Cubism
+Wassily Kandinsky|Expressionism
+Georges Braque|Cubism
+Hugo Ball|Dada
+Oskar Kokoschka|Expressionism
+
+sqlite> DELETE FROM artists
+   ...> WHERE name = "Pablo Picasso";
+sqlite> SELECT * FROM artists
+   ...> ;
+1|Marcel Duchamp|FALSE|8
+2|Alphonse Mucha|TRUE|4
+3|Edvard Munch|FALSE|5
+4|Henri Matisse|TRUE|3
+5|Mary Cassatt|FALSE|1
+6|Marc Chagall|FALSE|5
+7|Claude Monet|TRUE|1
+8|Paul Cezanne|FALSE|2
+9|Paul Gauguin|TRUE|2
+10|Georges Seurat|TRUE|2
+11|Vincent van Gogh|TRUE|2
+12|Egon Schiele|FALSE|4
+13|Gustav Klimt|TRUE|4
+14|Henri de Toulouse Lautrec|TRUE|2
+15|Giacomo Balla|TRUE|7
+17|Wassily Kandinsky|FALSE|5
+18|Georges Braque|FALSE|6
+19|Hugo Ball|FALSE|8
+20|Oskar Kokoschka|FALSE|5
