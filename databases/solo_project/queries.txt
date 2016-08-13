@@ -90,3 +90,13 @@ sqlite> SELECT * FROM artists
 18|Georges Braque|FALSE|6
 19|Hugo Ball|FALSE|8
 20|Oskar Kokoschka|FALSE|5
+
+sqlite> SELECT * FROM artists INNER JOIN movements ON artists.id = movements.id;
+1|Marcel Duchamp|FALSE|8|1|Impressionism
+2|Alphonse Mucha|TRUE|4|2|Post-Impressionism
+3|Edvard Munch|FALSE|5|3|Fauvism
+4|Henri Matisse|TRUE|3|4|Art Nouveau
+5|Mary Cassatt|FALSE|1|5|Expressionism
+6|Marc Chagall|FALSE|5|6|Cubism
+7|Claude Monet|TRUE|1|7|Futurism
+8|Paul Cezanne|FALSE|2|8|Dada
