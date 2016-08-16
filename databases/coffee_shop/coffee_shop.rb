@@ -102,8 +102,8 @@ puts "Your order of #{item_ordered} will be delivered to #{current_address}. Ple
 
 # retrieve more data
 price = menu["#{order_item}"]
-current_email = db.execute("SELECT email FROM users")
-puts "Your receipt and total of #{price} will be sent to #{email}."
+current_email = db.execute("SELECT email FROM user_info")
+puts "Your receipt and total of #{price} will be sent to #{current_email}."
 
 # end PROGRAM
 puts "Thanks for ordering coffee with us! Bye!"
