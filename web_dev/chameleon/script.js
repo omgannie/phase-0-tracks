@@ -1,3 +1,6 @@
+// JS cheatsheet
+// http://vanilla-js.blogspot.com/2013/07/javascript-cheat-sheet.html
+
 console.log("The script is running!");
 
 function addPinkBorder(event) {
