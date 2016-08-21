@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 50%;
+  top: 0;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-family: "Helvetica", sans-serif;
+  font-size: 2em;
+  color: darkgray;
+}
+
+h2 {
+  font-family: "Inconsolata", sans-serif;
+  font-size: 1.5em;
+  color: gray;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+div {
+  height: 200px;
+  width: 220px;
+  padding: 0;
+  display: inline-block;
+}
+
+p {
+  color: white;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.indigo {
+  background-color: indigo;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.black {
+  background-color: black;
+}
+
+.highlighted {
+    -webkit-box-shadow: 0 0 10px #FFD700;
+    -moz-box-shadow: 0 0 10px #FFD700;
+    box-shadow: 0 0 10px #FFD700;
+    cursor:pointer;
+}
