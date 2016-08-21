@@ -69,3 +69,12 @@ get '/:first/sum/:second' do
   sum = num1[1].to_i + num2[1].to_i
   "#{num1[1]} + #{num2[1]} = #{sum}"
 end
+
+# Is Sinatra the only web app library in Ruby? What are some others?
+# Ruby on Rails is a common example of framework for Ruby, but there are many others as well.
+
+# Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?
+# There are many different options, like MySQL, Postgres
+
+# What is meant by the term web stack?
+# A web stack refers to all of the technologies that are associated with the web. 
