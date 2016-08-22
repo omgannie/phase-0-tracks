@@ -1,3 +1,30 @@
 body {
-  font-family: Helvetica;
+  font-family: "Inconsolata";
+  font-size: 1.5em;
+}
+
+main {
+  left: 0;
+  width: 80%;
+}
+
+.registration {
+  right: 0;
+  width: 20%;
+  position: fixed;
+}
+
+.registration form input {
+  background-color: darkgray;
+  color: white;
+  font-size: 1em;
+  padding: 5px;
+  display: block;
+}
+
+.registration form button {
+  background-color: green;
+  color: white;
+  font-size: 1em;
+  padding: 20px;
 }

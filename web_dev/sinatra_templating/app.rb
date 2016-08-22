@@ -6,6 +6,8 @@ set :public_folder, File.dirname(__FILE__) + '/static'
 
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
+classes = SQLite3::Database.new("classes.db")
+classes.results_as_hash = true
 
 # show students on the home page
 get '/' do
@@ -25,3 +27,14 @@ post '/students' do
 end
 
 # add static resources
+
+# show classes offered
+get '/classes' do
+  @classes = db.execute("SELECT * from classes")
+  erb :classes
+end
+
+# student to add classes via form
+post "/classes" do
+  db.execute("INSERT INTO ")
+end
