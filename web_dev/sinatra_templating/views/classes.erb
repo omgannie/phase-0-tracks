@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Course Catalog | 2016 - 2017</title>
+  </head>
+  <body>
+    <h1>Hogwarts School of Witchcraft and Wizardry | Course Catalog</h1>
+    <h2>Classes Offered in 2016 - 2017</h2>
+
+    <main>
+      <% @classes.each do |class| %>
+        <li>
+          <%= class['days'] %>, <%= class['name'] %>, taught by <%= class['professor'] %>
+        </li>
+      <% end %>
+    </main>
+
+    <aside class="registration">
+      <h3>Register for your classes!</h3>
+      <form action="/students" method="POST">
+        <input type="text" name="first_name" placeholder="First Name">
+        <input type="text" name="last_name" placeholder="Last Name">
+        <input type="text" name="year" placeholder="Current Year">
+        <input type="text" name="age" placeholder="Age">
+        <button type="submit">Save</button>
+      </form>
+    </aside>
+  </body>
+</html>
