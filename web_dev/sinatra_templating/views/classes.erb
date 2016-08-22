@@ -9,9 +9,9 @@
     <h2>Classes Offered in 2016 - 2017</h2>
 
     <main>
-      <% @classes.each do |class| %>
+      <% classes.each do |class| %>
         <li>
-          <%= class['days'] %>, <%= class['name'] %>, taught by <%= class['professor'] %>
+          <%= class['day'] %>, <%= class['name'] %>, taught by <%= class['professor'] %>
         </li>
       <% end %>
     </main>
